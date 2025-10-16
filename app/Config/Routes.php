@@ -35,4 +35,6 @@ $routes->post('admin/posts/upload', 'Admin\Posts::uploadImage');
 // =========================
 // API ROUTE (BONUS)
 // =========================
-$routes->get('api/posts', 'Api\Posts::all');
+// API resource for posts (only index and show)
+$routes->resource('api/posts', ['controller' => 'Api\PostsController', 'only' => ['index', 'show']]);
+
